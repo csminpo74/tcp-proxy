@@ -5,7 +5,7 @@ var net    = require('net');
 var _      = require('lodash');
 
 var server = net.createServer(function(socket){
-  var address = socket.address().address;
+  var address = socket.remoteAddress;
   if (_.includes(config.addresses, address)) {
     // log
     console.log('Connection accepted:', address);
